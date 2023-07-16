@@ -6,7 +6,7 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import ru.practicum.stat.dto.EndpointHitDto;
 import ru.practicum.stat.dto.ViewStatsDto;
-import ru.practicum.stat.server.dao.StatRepository;
+import ru.practicum.stat.server.repository.StatRepository;
 import ru.practicum.stat.server.entity.EndpointHit;
 import ru.practicum.stat.server.mapper.StatsMapper;
 
@@ -26,10 +26,10 @@ public class StatService {
         );
     }
 
-    public List<ViewStatsDto> getViewStats(LocalDateTime start, LocalDateTime end, String[] uris, boolean unique) {
+    public List<ViewStatsDto> getViewStats(LocalDateTime start, LocalDateTime end, List<String> uris, boolean unique) {
         if (unique)
-            return statRepository.getViewStats(start, end, uris);
-        else
             return statRepository.getUniqueViewStats(start, end, uris);
+        else
+            return statRepository.getViewStats(start, end, uris);
     }
 }

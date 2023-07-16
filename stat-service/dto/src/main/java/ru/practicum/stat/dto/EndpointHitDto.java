@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class EndpointHitDto {
     @NotBlank
     String app;
