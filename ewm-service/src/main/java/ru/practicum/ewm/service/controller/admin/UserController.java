@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.practicum.ewm.service.dto.user.NewUserRequest;
 import ru.practicum.ewm.service.dto.user.UserDto;
 import ru.practicum.ewm.service.service.admin.UserServiceAdmin;
 
@@ -27,7 +28,7 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDto addUser(@RequestBody @Valid UserDto userDto) {
+    public UserDto addUser(@RequestBody @Valid NewUserRequest userDto) {
         return userServiceAdmin.addUser(userDto);
     }
 
