@@ -3,7 +3,7 @@ package ru.practicum.ewm.service.service.admin;
 import ru.practicum.ewm.service.dto.category.CategoryDto;
 import ru.practicum.ewm.service.dto.category.NewCategoryDto;
 
-public interface CategoryServiceAdmin {
+public interface CategoryAdminService {
     CategoryDto addCategory(NewCategoryDto dto);
 
     void deleteCategory(Long catId);

@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.ewm.service.dto.category.CategoryDto;
-import ru.practicum.ewm.service.service.publ.CategoryService;
+import ru.practicum.ewm.service.service.publ.CategoryPublicService;
 
 import java.util.List;
 
@@ -13,17 +13,17 @@ import java.util.List;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequestMapping("/categories")
-public class CategoryController {
-    CategoryService categoryService;
+public class CategoryPublicController {
+    CategoryPublicService categoryPublicService;
 
     @GetMapping
     public List<CategoryDto> getCategories(@RequestParam(defaultValue = "0") int from,
                                            @RequestParam(defaultValue = "10") int size) {
-        return categoryService.getCategories(from, size);
+        return categoryPublicService.getCategories(from, size);
     }
 
     @GetMapping("/{catId}")
     public CategoryDto getCategoryById(@PathVariable Long catId) {
-        return categoryService.getCategoryById(catId);
+        return categoryPublicService.getCategoryById(catId);
     }
 }

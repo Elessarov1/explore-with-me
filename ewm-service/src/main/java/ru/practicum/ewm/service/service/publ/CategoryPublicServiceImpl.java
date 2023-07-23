@@ -6,7 +6,7 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import ru.practicum.ewm.service.dto.category.CategoryDto;
 import ru.practicum.ewm.service.entity.Category;
-import ru.practicum.ewm.service.exception.NotFoundException;
+import ru.practicum.ewm.service.controller.advice.exception.NotFoundException;
 import ru.practicum.ewm.service.util.DefaultValues;
 import ru.practicum.ewm.service.util.mapper.CategoryMapper;
 import ru.practicum.ewm.service.repository.CategoryRepository;
@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class CategoryServiceImpl implements CategoryService {
+public class CategoryPublicServiceImpl implements CategoryPublicService {
     CategoryRepository categoryRepository;
 
     @Override

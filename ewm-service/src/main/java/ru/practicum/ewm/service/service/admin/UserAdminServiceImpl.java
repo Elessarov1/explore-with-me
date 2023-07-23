@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import ru.practicum.ewm.service.dto.user.NewUserRequest;
 import ru.practicum.ewm.service.dto.user.UserDto;
 import ru.practicum.ewm.service.entity.User;
-import ru.practicum.ewm.service.exception.NotFoundException;
+import ru.practicum.ewm.service.controller.advice.exception.NotFoundException;
 import ru.practicum.ewm.service.util.DefaultValues;
 import ru.practicum.ewm.service.util.mapper.UserMapper;
 import ru.practicum.ewm.service.repository.UserRepository;
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
-public class UserServiceAdminImpl implements UserServiceAdmin {
+public class UserAdminServiceImpl implements UserAdminService {
     UserRepository userRepository;
 
     @Override

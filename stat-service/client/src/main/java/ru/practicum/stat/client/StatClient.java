@@ -10,7 +10,6 @@ import ru.practicum.stat.dto.EndpointHitDto;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-
 public class StatClient extends BaseClient {
     private static final String SERVER_URL = "http://localhost:9090";
     private static final String HIT_ENDPOINT = "/hit";

@@ -5,7 +5,7 @@ import ru.practicum.ewm.service.dto.user.UserDto;
 
 import java.util.List;
 
-public interface UserServiceAdmin {
+public interface UserAdminService {
     List<UserDto> getUsers(List<Integer> userIds, int from, int size);
 
     UserDto addUser(NewUserRequest userDto);

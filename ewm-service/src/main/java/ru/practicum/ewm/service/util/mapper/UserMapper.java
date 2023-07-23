@@ -3,6 +3,7 @@ package ru.practicum.ewm.service.util.mapper;
 import lombok.experimental.UtilityClass;
 import ru.practicum.ewm.service.dto.user.NewUserRequest;
 import ru.practicum.ewm.service.dto.user.UserDto;
+import ru.practicum.ewm.service.dto.user.UserShortDto;
 import ru.practicum.ewm.service.entity.User;
 
 import java.util.List;
@@ -29,5 +30,12 @@ public class UserMapper {
         return users.stream()
                 .map(UserMapper::toDto)
                 .collect(Collectors.toList());
+    }
+
+    public UserShortDto toShortUser(User user) {
+        return UserShortDto.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .build();
     }
 }

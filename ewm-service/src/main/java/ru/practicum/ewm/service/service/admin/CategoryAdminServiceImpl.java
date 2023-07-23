@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 import ru.practicum.ewm.service.dto.category.CategoryDto;
 import ru.practicum.ewm.service.dto.category.NewCategoryDto;
 import ru.practicum.ewm.service.entity.Category;
-import ru.practicum.ewm.service.exception.NotFoundException;
+import ru.practicum.ewm.service.controller.advice.exception.NotFoundException;
 import ru.practicum.ewm.service.util.mapper.CategoryMapper;
 import ru.practicum.ewm.service.repository.CategoryRepository;
 
 @Service
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class CategoryServiceAdminImpl implements CategoryServiceAdmin {
+public class CategoryAdminServiceImpl implements CategoryAdminService {
     CategoryRepository categoryRepository;
 
     @Override
