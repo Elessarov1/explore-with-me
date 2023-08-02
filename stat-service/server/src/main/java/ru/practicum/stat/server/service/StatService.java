@@ -26,7 +26,7 @@ public class StatService {
     }
 
     public List<ViewStatsDto> getViewStats(LocalDateTime start, LocalDateTime end, List<String> uris, boolean unique) {
-        if (start == null || end == null) {
+        if (start == null || end == null || end.isBefore(start)) {
             throw new BadRequestException("incorrect date params");
         }
         if (unique)
