@@ -16,9 +16,8 @@ import java.util.Map;
 
 @Service
 public class StatClient extends BaseClient {
-    /*For the local tests
-    private static final String SERVER_URL = "http://localhost:9090";
-    */
+    //For the local tests
+    //private static final String SERVER_URL = "http://localhost:9090";
     private static final String SERVER_URL = "http://stats-server:9090";
     private static final String HIT_ENDPOINT = "/hit";
     private static final String STATS_ENDPOINT = "/stats";
